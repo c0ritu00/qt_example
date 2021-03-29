@@ -9,7 +9,8 @@ router.get('/:id?',
       if (err) {
         response.json(err);
       } else {
-        response.json(dbResult);
+        //palautetaan json objekti eli ainoa alkio
+        response.json(dbResult[0]);
       }
     });
   } else {
@@ -30,7 +31,7 @@ function(request, response) {
     if (err) {
       response.json(err);
     } else {
-      response.json(request.body);
+      response.json("person added");
     }
   });
 });
@@ -51,6 +52,23 @@ function(request, response) {
 router.put('/:id', 
 function(request, response) {
   person.update(request.params.id, request.body, function(err, dbResult) {
+    if (err) {
+      response.json(err);
+    } else {
+      console.log(dbResult);
+      if(dbResult.affectedRows==1){
+        response.json("person updated");
+      }
+      else{
+        response.json("person does not exist");
+      }
+    }
+  });
+});
+
+router.post('/money_action', 
+function(request, response) {
+  person.moneyAction(request.body, function(err, dbResult) {
     if (err) {
       response.json(err);
     } else {

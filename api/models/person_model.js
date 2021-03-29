@@ -23,6 +23,14 @@ const person = {
       [person.fname, person.lname, person.money, id],
       callback
     );
-  }
+  },
+  moneyAction: function(procedure_params, callback) {
+    return db.query(
+      'CALL money_action (?,?)',
+      [procedure_params.id, procedure_params.amount],
+      callback
+    );
+  },
+
 };
 module.exports = person;
