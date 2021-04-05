@@ -1,1 +1,3 @@
 node_modules/
+/build*
+qt_frontend/qt_frontend.pro_user
