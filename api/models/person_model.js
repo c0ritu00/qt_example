@@ -1,3 +1,4 @@
+  
 const db = require('../database');
 
 const person = {
@@ -30,7 +31,7 @@ const person = {
       [procedure_params.id, procedure_params.amount],
       callback
     );
-  },
+  }
 
 };
 module.exports = person;
