@@ -13,8 +13,70 @@
   <property name="windowTitle">
    <string>MainWindow</string>
   </property>
-  <widget class="QWidget" name="centralwidget"/>
-  <widget class="QMenuBar" name="menubar"/>
+  <widget class="QWidget" name="centralwidget">
+   <widget class="QPushButton" name="btnGetAllPersons">
+    <property name="geometry">
+     <rect>
+      <x>60</x>
+      <y>70</y>
+      <width>171</width>
+      <height>101</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Kaikki asiakkaat</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="btnGetOnePerson">
+    <property name="geometry">
+     <rect>
+      <x>60</x>
+      <y>200</y>
+      <width>171</width>
+      <height>101</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Yksi asiakas</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="btnGetFullname">
+    <property name="geometry">
+     <rect>
+      <x>60</x>
+      <y>330</y>
+      <width>171</width>
+      <height>101</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Koko nimi</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="labelResult">
+    <property name="geometry">
+     <rect>
+      <x>370</x>
+      <y>80</y>
+      <width>281</width>
+      <height>211</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>TextLabel</string>
+    </property>
+   </widget>
+  </widget>
+  <widget class="QMenuBar" name="menubar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>800</width>
+     <height>21</height>
+    </rect>
+   </property>
+  </widget>
   <widget class="QStatusBar" name="statusbar"/>
  </widget>
  <resources/>
