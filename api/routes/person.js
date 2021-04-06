@@ -60,11 +60,13 @@ function(request, response) {
         response.json("person updated");
       }
       else{
-        response.json("person does not exist");
+        response.json("person does not exist");  
       }
+      
     }
   });
 });
+
 
 router.post('/money_action', 
 function(request, response) {
@@ -72,7 +74,7 @@ function(request, response) {
     if (err) {
       response.json(err);
     } else {
-      response.json(dbResult);
+      response.json(dbResult.affectedRows);
     }
   });
 });

@@ -16,7 +16,7 @@ MainWindow::~MainWindow()
 
 void MainWindow::on_btnGetAllPersons_clicked()
 {
-    QString site_url="http://localhost:3000/example/allpersons";
+    QString site_url="http://localhost:3000/example/persons";
     QString credentials="automat123:pass123";
     QNetworkRequest request((site_url));
     request.setHeader(QNetworkRequest::ContentTypeHeader, "application/json");
@@ -25,11 +25,15 @@ void MainWindow::on_btnGetAllPersons_clicked()
     request.setRawHeader( "Authorization", headerData.toLocal8Bit() );
     allPersonsManager = new QNetworkAccessManager(this);
     connect(allPersonsManager, SIGNAL(finished (QNetworkReply*)),
-    this, SLOT(getBookSlot(QNetworkReply*)));
+    this, SLOT(allPersonsSlot(QNetworkReply*)));
     allPersonsReply = allPersonsManager->get(request);
 }
 
-void MainWindow::allPersonsSlot(QNetworkReply *reply)
+void MainWindow::allPersonsSlot(QNetworkReply * reply)
 {
+    QByteArray response_data=reply->readAll();
+    qDebug()<<response_data;
 
+    reply->deleteLater();
+    allPersonsManager->deleteLater();
 }
